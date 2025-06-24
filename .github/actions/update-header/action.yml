@@ -1,0 +1,14 @@
+name: "Update HTML Header"
+description: "Replaces the <h1> content in index.html"
+inputs:
+  message:
+    description: "Text to insert inside <h1>"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Replace <h1> content in index.html
+      run: |
+        sed -i 's|<h1>.*</h1>|<h1>${{ inputs.message }}</h1>|' templates/index.html
+

@@ -1,0 +1,18 @@
+name: Use Composite Action Locally
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  update-header:
+    runs-on: self-hosted  # Or 'ubuntu-latest' if you're not using your own runner
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: Use composite action to update HTML
+        uses: ./.github/actions/update-header
+        with:
+          message: "Hello from the same repo!"
+  
