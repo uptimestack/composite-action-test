@@ -14,5 +14,5 @@ jobs:
       - name: Use composite action to update HTML
         uses: ./.github/actions/update-header
         with:
-          message: "Hello from the same repo!"
+          message: "Hello from the repo!"
   
