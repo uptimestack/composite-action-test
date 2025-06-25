@@ -11,4 +11,4 @@ runs:
     - name: Replace <h1> content in index.html
       run: |
         sed -i 's|<h1>.*</h1>|<h1>${{ inputs.message }}</h1>|' templates/index.html
-
+      shell: bash
